@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+    <form action="abc.php" method="GET">
+        <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            Name: <input placeholder="Nhập họ tên" name="fullName" value="David" /> <br>
+            Age: <input type="number" name="age" value="20" /><br>
+            Phone: <input name="phone" disabled /><br>
+            Email: <input type="email" /><br>
+            Password: <input type="password" name="password" value="" /><br/>
+            Gender:
+            <input type="radio" checked name="GioiTinh" value="Male" />Nam
+            <input type="radio" name="GioiTinh" value="Female" />Nữ
+            <br/>
+            Sở thích:
+            <input type="checkbox" value="DL" name="sothich" />Du lịch
+            <input type="checkbox" value="XP" name="sothich" />Xem phim
+            <input type="checkbox" value="DB" name="sothich" />Đá banh
+        </fieldset>
+        <input type="submit" value="Đăng ký" />
+        <input type="reset" value="Xóa sạch" />
+    </form>
+</body>
+</html>
