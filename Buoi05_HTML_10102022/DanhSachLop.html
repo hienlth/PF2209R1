@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách lớp</title>
+    <style>
+        table{width: 100%;}
+        td, th{
+            border: 1px solid #ff7878;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffff0f;
+        }
+    </style>
+</head>
+<body>
+    
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>#</th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>Tèo Nguyễn</td>
+            <td>0909123780</td>
+        </tr>
+        <tr>
+            <td>Lý Nguyễn</td>
+            <td>0909123380</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Tổng cộng</td>
+            <td style="text-align: right; color: red;">2</td>
+        </tr>
+    </table>
+    CSS inline style: viết CSS ngay tại thẻ cần định dạng
+</body>
+</html>
