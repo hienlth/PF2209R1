@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //camelCase
+        function xuLyHoTen() {
+            let traLoi = prompt('Bạn tên gì?');
+            alert('Xin chào bạn: ' + traLoi);
+        }
+
+        function xacNhanThongTin(){
+            let traLoi = confirm('Bạn hiểu bài không?');
+            alert('Bạn trả lời: ' + traLoi);
+        }
+    </script>
+    <button type="button" onclick="xacNhanThongTin()">
+        Hỏi
+    </button>
+    <input type="button" value="Hello" onclick="alert('HELLO Các bạn')" />
+    <input type="button" value="Hỏi tên" onclick="xuLyHoTen()" />
+</body>
+</html>
+<script>
+    console.log('Hết nội dung trang');
+    document.write('TEST DOCUMENT WRITE');
+</script>
