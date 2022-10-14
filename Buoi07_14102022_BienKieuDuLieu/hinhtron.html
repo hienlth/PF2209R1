@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Viết chương trình JavaScript nhập bán kính của hình tròn từ người dùng và tìm đường kính, chu vi và diện tích của hình tròn.</div>
+    <script>
+        const PI = 3.14;
+        let banKinh = prompt('Nhập bán kính');
+        let R = parseFloat(banKinh);
+        let chuVi = 2 * R * PI;
+        let dienTich = R **2 * PI;
+        document.write("S = "+dienTich+", P = " + chuVi);
+    </script>
+</body>
+</html>
