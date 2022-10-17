@@ -10,16 +10,18 @@
     <script>
         function sayHello() {
             let txtHoTen = document.getElementById("hoTen");
-            // console.log(txtHoTen.value);
-            // alert('Hello ' + txtHoTen.value);
+
+            txtHoTen.style.backgroundColor = 'cyan';
             let chuoi = `<b>${txtHoTen.value}</b>`;
+
             document.getElementById("tenBan").innerHTML = chuoi;
             document.getElementById("test").innerText = chuoi;
         }
     </script>
+    <h2 style="color: red;">Demo chương trìh</h2>
     <div>
         Nhập họ tên:
-        <input id="hoTen" />
+        <input id="hoTen" placeholder="input" />
         <button type="button" onclick="sayHello();">
             Chào
         </button>
