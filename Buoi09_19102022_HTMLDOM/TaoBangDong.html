@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bảng động</title>
+</head>
+<body>
+    <!-- Nhập số dòng:
+    <input type="number" min="1" id="soDong" />
+    <br>
+    Nhập số cột:
+    <input type="number" min="1" id="soCot" />
+    <br>
+    <button type="button">Vẽ bảng</button>
+     -->
+
+    <div id="ket_qua">
+        <table id="bang" border="1" cellspacing="0" cellpadding="5">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Họ tên</td>
+                </tr>                
+            </thead>
+            <tbody id="noi_dung_bang"></tbody>
+        </table>
+    </div>
+    <button type="button" onclick="themDong()">Thêm 1 dòng</button>
+    <button type="button" onclick="xoaNoiDung()">Xóa bảng</button>
+    <script>
+        function xoaNoiDung() {
+            document.getElementById("noi_dung_bang").innerHTML = '';
+        }
+
+        function themDong(){
+            let dong = document.createElement("tr");
+            let o_1 = document.createElement("td");
+            let o_2 = document.createElement("td");
+            o_1.innerHTML = "STT";
+            o_2.innerHTML = "Lê Thị Lệ";
+            dong.appendChild(o_1);
+            dong.appendChild(o_2);
+
+            document.getElementById("noi_dung_bang").appendChild(dong);            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .normal-button {
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        function changeBackgroudColor(id, color) { 
+            document.getElementById(id).style.backgroundColor = color;
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" class="normal-button" id="blueBtn" onclick="changeBackgroudColor(id, 'blue');">Blue</button>
+    <button type="button" class="normal-button" id="redBtn" onclick="changeBackgroudColor(id, 'red');">Red</button>
+    <button type="button" class="normal-button" id="greenBtn"
+        onclick="changeBackgroudColor(id, 'green');">Green</button>
+</body>
+
+</html>
