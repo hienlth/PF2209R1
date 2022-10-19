@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">Đoạn văn thứ nhất.</p>
+        <p id="p2">Đoạn văn thứ hai.</p>
+    </div>
+    <script>
+        const p3 = document.createElement("p");
+        p3.innerHTML = "Đoạn văn thứ ba.";
+        
+        const mydiv = document.getElementById("div1");
+        mydiv.insertBefore(p3, p2);
+
+        // kiếm p có id = "p1" để xóa
+        const p1 = document.getElementById("p1");
+        p1.remove();
+    </script>
+</body>
+</html>
