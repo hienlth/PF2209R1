@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 onmouseover="suKienHoChuot()" onmouseleave="suKienRaKhoi()"
+    style="background-color: cyan;"
+    >
+        Demo sự kiện
+    </h2>
+    <input onchange="xuLyThayDoi()" id="NhapLieu" />
+    <div id="ketQua"></div>
+    <script>
+        function xuLyThayDoi(){
+            document.getElementById("ketQua").innerHTML = "Bạn vừa gõ:" + document.getElementById("NhapLieu").value;
+        }
+        function suKienHoChuot(){
+            document.getElementById("ketQua").innerHTML = "Bạn đang rê/rà chuột lên thẻ h2";
+        }
+        function suKienRaKhoi(){
+            document.getElementById("ketQua").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
