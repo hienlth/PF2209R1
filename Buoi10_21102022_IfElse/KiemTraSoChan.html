@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số chẵn</title>
+</head>
+<body>
+    Nhập số cần kiểm tra:
+    <input type="text" id="SoNhap" />
+    <button onclick="KiemTraNhap()">Kiểm tra</button>
+    <div id="KetQua" style="color: red;"></div>
+    <script>
+        // dùng hàm isNaN(chuỗi): để kiểm tra bạn nhập phải là số hay không (NaN = Not a Number)
+        function KiemTraNhap() {
+            let chuoiNhap = document.getElementById("SoNhap").value;
+            let ketQua = "";
+
+            if ((chuoiNhap === "") || (isNaN(chuoiNhap) === true)) {
+                ketQua = "Không hợp lệ";
+            } else {
+                let soNhap = parseInt(chuoiNhap);
+                // document.write(soNhap % 10)
+                if (soNhap % 2 == 0) // %: chia lấy dư
+                {
+                    ketQua = `${soNhap} là số chẵn.`;
+                } else {
+                    ketQua = `${soNhap} là số lẻ.`;
+                }
+            }
+
+            document.getElementById("KetQua").innerHTML = ketQua;
+        }  
+
+        
+    </script>
+</body>
+</html>
