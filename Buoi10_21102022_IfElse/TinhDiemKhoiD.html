@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm thi</title>
+</head>
+<body>
+    Điểm toán:
+    <input type="number" min="0" max="10" id="DiemToan" />
+    <br>
+    Điểm văn:
+    <input type="number" min="0" max="10" id="DiemVan" />
+    <br>
+    Điểm anh:
+    <input type="number" min="0" max="10" id="DiemAnh" />
+    <br>
+    Khu vực:
+    <select id="KhuVuc">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0">KV3</option>
+    </select><br>
+    <button type="button" onclick="TinhDiem()">Tính điểm</button>
+    <br>
+    <div id="KetQua"></div>
+    <script>
+        function TinhDiem(){
+            let toan = parseFloat(document.getElementById("DiemToan").value);
+            let anh = parseFloat(document.getElementById("DiemAnh").value);
+            let van = parseFloat(document.getElementById("DiemVan").value);
+            let diemKhuVuc = parseFloat(document.getElementById("KhuVuc").value);
+            let tongDiem = toan + anh + van + diemKhuVuc;
+            alert(tongDiem);
+            document.getElementById("KetQua").innerHTML = `Tổng điểm đại học khối D của bạn là ${tongDiem}`;
+        }
+    </script>
+</body>
+</html>
