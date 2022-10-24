@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Nhập năm ==> Năm nhuận hay không?<br>
+        Nhập vào tháng và xuất ra tháng đó có bao nhiêu ngày?
+    </div>
+    <script>
+        let nam = parseInt(prompt("Nhập năm cần kiểm tra: "));
+       
+        let laNamNhuan = false;
+        if (nam % 400 == 0) {
+            laNamNhuan = true;
+        } else if (nam % 4 == 0 && nam % 100 != 0) {
+            laNamNhuan = true;
+        }
+
+        let chuoi = `Năm ${nam} là năm ${laNamNhuan ? "nhuận" : "không nhuận"}`;
+        alert(chuoi);
+
+        let thang = parseInt(prompt("Nhập tháng cần kiểm tra:"));
+
+        let soNgay = 0;
+        switch (thang) {
+            case 1: 
+            case 3: case 5: case 7: case 8:
+            case 10: case 12:
+                soNgay = 31; break;
+            case 4: case 6: case 9: case 11:
+                soNgay = 30; break;
+            case 2: soNgay = laNamNhuan ? 29: 28; break;
+        }
+        alert(`Tháng ${thang} có ${soNgay} ngày.`);
+    </script>
+</body>
+</html>
