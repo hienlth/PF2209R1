@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập điểm</title>
+</head>
+<body>
+    <div>Nhập vào điểm ( 0 <= diem <= 10). Nhập sai thì nhập lại.</div>
+    <script>
+        while (11) {
+            console.log("Số 11");
+            break;
+        }
+        while (-11) {
+            console.log("Số -11");
+            break;
+        }
+        while (0) {
+            console.log("Số 0");
+            break;
+        }
+        while (true) {
+            let diem = prompt("Nhập điểm (>= 0 và <= 10):");
+            if (diem !== null && !isNaN(diem)) {
+                alert(diem + " Là số");
+                break;//dừng vòng lặp
+            } else {
+                alert("Chưa hợp lệ! Nhập lại!")
+            }            
+        }
+    </script>
+</body>
+</html>
