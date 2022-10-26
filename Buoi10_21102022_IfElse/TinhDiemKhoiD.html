@@ -17,7 +17,7 @@
     <input type="number" min="0" max="10" id="DiemAnh" />
     <br>
     Khu vực:
-    <select id="KhuVuc">
+    <select id="KhuVuc" onchange="xuLyThayDoiKhuVuc(this)">
         <option value="0.75">KV1</option>
         <option value="0.5">KV2-NT</option>
         <option value="0.25">KV2</option>
@@ -27,6 +27,9 @@
     <br>
     <div id="KetQua"></div>
     <script>
+        function xuLyThayDoiKhuVuc(e){
+            console.log(e.value)
+        }
         function TinhDiem(){
             let toan = parseFloat(document.getElementById("DiemToan").value);
             let anh = parseFloat(document.getElementById("DiemAnh").value);
