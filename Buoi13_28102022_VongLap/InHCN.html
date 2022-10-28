@@ -11,11 +11,23 @@
     Nhập số dòng:
     <input type="number" id="so_dong" /><br>
     Nhập số cột:
-    <input type="number" id="so_cột" /><br>
-    <button type="button">Vẽ hình chữ nhật</button>
+    <input type="number" id="so_cot" /><br>
+    <button type="button" onclick="ve_hinh_chu_nhat()">Vẽ hình chữ nhật</button>
     <div id="ket_qua"></div>
     <script>
-        
+        // snake_case
+        function ve_hinh_chu_nhat() {
+            let chuoi = "";
+            let so_dong = parseInt(document.getElementById("so_dong").value);
+            let so_cot = parseInt(document.getElementById("so_cot").value);
+            for (let i = 0; i < so_dong; i++) {
+                for(let j = 1; j <= so_cot; j++) {
+                    chuoi += "*";
+                }
+                chuoi += "<br>";
+            }
+            document.getElementById("ket_qua").innerHTML = chuoi;
+        }
     </script>
 </body>
 </html>
