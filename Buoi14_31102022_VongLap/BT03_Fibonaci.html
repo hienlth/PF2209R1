@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h4>
+    <div>1,1,2,3,5,8,13,....</div>
+    <pre>
+        n = 1 ==> F1 = 1
+        n = 2 ==> F2 = 1
+        n = 3 ==> F3 = F2 + F1 = 2
+        n     ==> Fn = Fn-1 + Fn-2
+    </pre>
+    <script>
+        const N = 20;
+        let f1 = 1, f2 = 1;
+        document.write(`${f1}, ${f2}, `);
+        for(let i = 3; i <= N; i++) {
+            let nextNumber = f2 + f1;
+            document.write(`${nextNumber}, `);
+            
+            // tính/gán f1 mới, f2 mới
+            f1 = f2;
+            f2 = nextNumber;
+        }
+    </script>
+</body>
+</html>
