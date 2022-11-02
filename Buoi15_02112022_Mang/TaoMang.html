@@ -14,6 +14,7 @@
         <button type="button" onclick="hien_thi()">Display</button>
     </div>
     <hr>
+    <div id="ketQuaNew"></div>
     <div id="ketQua"></div>
     <script>
         let mang = new Array();
@@ -24,6 +25,8 @@
                 console.log(mang);
                 oNhapLieu.value = "";
                 oNhapLieu.focus();//đưa dấu trỏ chuột vào ô nhập liệu
+
+                document.getElementById("ketQuaNew").innerHTML = mang.join();
             }
         }
 

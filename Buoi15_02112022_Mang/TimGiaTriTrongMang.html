@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tìm giá trị trong mảng</h2>
+    <div>
+        Khởi tạo mảng có:
+        <input type="number" min="1" id="soPhanTu" /> phần tử.<button type="button" onclick="khoiTaoMang()">Khởi tạo</button>
+        <br>
+        Cần tìm: <input id="giaTriTim" type="number" />
+        <button type="button">Tìm</button>
+    </div>
+    <div id="ketQua"></div>
+    <script>
+        let mang = [];
+        function khoiTaoMang() {
+            let soPhanTu = parseInt(document.getElementById("soPhanTu").value);
+            for(let i = 0; i < soPhanTu; i++){
+                mang[i] = Math.floor(Math.random() * 56);
+                console.log(mang);
+            }
+
+            document.getElementById("ketQua").innerHTML = mang.join(", ");
+        }
+        function xuLyTim(){
+
+        }
+    </script>
+</body>
+</html>
