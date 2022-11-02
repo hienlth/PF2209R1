@@ -28,7 +28,20 @@
         }
 
         function hien_thi(){
+            let chuoi = "";
+            // for(let i = 0; i < mang.length; i++){
+            //     chuoi += `Element ${i} = ${mang[i]}<br>`;
+            // }
 
+            for(let i in mang) {
+                chuoi += `Element ${i} = ${mang[i]}<br>`;
+            }
+
+            // //ECMA2015 (ES6) - Arrow function
+            // mang.forEach((item) => {
+            //     chuoi += `Element ${item}<br>`;
+            // });
+            document.getElementById("ketQua").innerHTML = chuoi;
         }
     </script>
 </body>
