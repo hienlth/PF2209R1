@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [33, 4, 1111, 222];
+        a.sort(); // Alphabetical order: 1111, 222, 33, 4
+        console.log(a.join("; "));
+        a.sort(function (a, b) { // Numerical order: 4, 33, 222, 1111
+            return a - b; // Returns &lt; 0, 0, or &gt; 0, depending on order
+        });
+        console.log(a.join("; "));
+        a.sort(function (a, b) { // Reverse numerical order
+            return b - a;
+        });
+        console.log(a.join("; "));
+    </script>
+</body>
+</html>
