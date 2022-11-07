@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        1. Nhập vào số, số cột của ma trận.
+        2. Khởi tạo giá trị ngẫu nhiên của mỗi phần tử
+        3. Xuất ma trận.
+    </pre>
+    Nhập số dòng: <input id="soDong" type="number" min="1" /><br>
+    Nhập số cột: <input id="soCot" type="number" min="1" /><br>
+    <button type="button" onclick="xuLy()">Khởi tạo ma trận</button>
+    <div id="ketQua"></div>
+    <script>
+        function xuLy() {
+            let so_dong = parseInt(document.getElementById("soDong").value);
+            let so_cot = parseInt(document.getElementById("soCot").value);
+
+            //khai báo ma trận 2 chiều
+            let maTran = new Array(so_dong).fill(new Array(so_cot));
+
+            //khởi tạo
+            let bang = document.createElement("table");
+            for (let iDong = 0; iDong < maTran.length; iDong++) {
+                let dong = document.createElement("tr");
+                for (let jCot = 0; jCot < maTran[iDong].length; jCot++) {
+                    console.log(jCot)
+                    maTran[iDong][jCot] = Math.floor(Math.random() * 100 + 1);
+
+                    let cot = document.createElement("td");
+                    cot.innerHTML = maTran[iDong][jCot];
+                    dong.appendChild(cot);                 
+                }
+                bang.appendChild(dong);
+            }
+
+            document.getElementById("ketQua").appendChild(bang);
+        }
+    </script>
+</body>
+</html>
