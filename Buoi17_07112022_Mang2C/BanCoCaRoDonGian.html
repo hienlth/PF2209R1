@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="banCo"></div>
+    <button type="button" onclick="dienGiaTri(); inBanCo();">CHANGE VALUE</button>
+    <script>
+        const DONG = 5, COT = 5;
+        // let mang = new Array(DONG).fill(new Array(COT));
+        let mang = [];
+
+        function khoiTaoMang() {
+            for(let i = 0; i < DONG; i++) {
+                mang[i] = new Array(COT);
+                for(let j = 0; j < COT; j++) {
+                    mang[i][j] = "O";
+                }
+            }
+        }
+
+        function dienGiaTri() {
+            let chiSoDong = parseInt(prompt("Dòng số: "));
+            let chiSoCot = parseInt(prompt("Cột số: "));
+            mang[chiSoDong][chiSoCot] = "X";
+            console.log(mang);
+        }
+
+        function inBanCo() {
+            let chuoi = "";
+            for (let i = 0; i < mang.length; i++) {
+                chuoi += "<br>";                
+                for (let j = 0; j < mang[i].length; j++) {
+                    chuoi += mang[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            document.getElementById("banCo").innerHTML = chuoi;
+        }
+
+        khoiTaoMang();
+        inBanCo();
+    </script>
+</body>
+</html>
