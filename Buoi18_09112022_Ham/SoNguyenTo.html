@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        - Nhập vào 1 số nguyên N.
+        - Xuất ra số đó có là nguyên tố hay không.        
+        - In N số nguyên tố đầu tiên.
+        - In ra các số nguyên tố từ 1 đến 1000
+    </pre>
+    <script>
+        function isPrime(number) {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        let soNguyen = parseInt(prompt("Nhập số nguyên:"));
+        if (isPrime(soNguyen)) {
+            alert(soNguyen + " là số nguyên tố");
+        } else {
+            alert(`${soNguyen} không là số nguyên tố`);
+        }
+
+
+        // In N số nguyên tố đầu tiên
+        //let count = 0;
+        let number = 2;
+        let primes = [];
+        while (primes.length < soNguyen) {
+            if (isPrime(number)) {
+                primes.push(number);
+                // count++;
+            }
+            number++;
+        }
+        alert(`${soNguyen} số nguyên tố đầu tiên là: ${primes.join(",")}`)
+    </script>
+</body>
+
+</html>
