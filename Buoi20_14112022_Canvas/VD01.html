@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400" height="300" style="border: 1px solid red;">
+        Your browser doesn't support canvas
+    </canvas>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+
+        //vẽ đường (move tới điểm đầu, liketo tới điểm cuối)
+        // ctx.moveTo(200, 10);
+        // ctx.lineTo(50, 200);
+        // ctx.lineTo(300, 280);
+        // ctx.lineTo(200, 10);
+        ctx.beginPath();
+        ctx.moveTo(40, 100);
+        ctx.lineTo(200, 100);
+        ctx.strokeStyle = "#00FF00";
+        ctx.stroke();
+        ctx.lineTo(60, 300);
+        ctx.lineTo(120, 20);
+        ctx.lineTo(160, 300);
+        ctx.lineTo(40, 100);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "#FF0000";
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
