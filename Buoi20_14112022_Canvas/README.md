@@ -16,11 +16,20 @@
 ```
 
 ## Vẽ đường
-ctx.moveTo(x,y)
-ctx.lineTo(x,y)
+- ctx.moveTo(x,y)
+- ctx.lineTo(x,y)
 
 * Định dạng nét vẽ
 ```
 ctx.strokeStyle = arrColor[colorIdx];
 ctx.stroke();
 ```
+
+## Vẽ cung tròn
+```
+ctx.arc(x, y, radius, startAngle, endAngle)
+ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise)
+```
+* counterclockwise: default = fault: ngược kim đồng đồ
+* startAngle: góc bắt đầu (đơn vị radian, theo số Math.PI)
+* endAngle: góc bắt đầu (đơn vị radian, theo số Math.PI)
