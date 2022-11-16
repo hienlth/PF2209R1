@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="600" height="600" style="border: 1px solid blue;"
+        onkeyup="function evt(e){ console.log(e)}">
+        Does not support canvas
+    </canvas>
+</body>
+<script>
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = "green";
+    ctx.fillRect(40, 40, 100, 100);
+    function xuLyDiChuyen(e) {
+        console.log(e, e.event)
+    }
+
+    //đăng ký sự kiện keyup (thả phím lên)
+    window.addEventListener('keyup', this.printCode, false);
+    function printCode(e) {
+        console.log(e.keyCode);
+    }
+</script>
+
+</html>
