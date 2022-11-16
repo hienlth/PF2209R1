@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="600" height="600" style="border: 1px solid blue;">
+        Does not support canvas
+    </canvas>
+    <button type="button" onclick="stopDraw()">STOP</button>
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+
+        ctx.font = "80px Times New Roman";
+        ctx.fillStyle = "red";
+        ctx.fillText("CODE GYM", 70, 80);
+
+        ctx.font = "55px Times New Roman";
+        ctx.fillStyle = "blue";
+        ctx.fillText("HAPPY TEACHER DAY", 18, 180);
+
+        function veHinhChuNhat() {
+            //xóa màn hình
+            ctx.clearRect(0, 0, c.width, c.height);
+
+            let x = 50 + Math.random() * 250;
+            let y = 50 + Math.random() * 250;
+            ctx.beginPath();
+            ctx.fillStyle = "green";
+            ctx.fillRect(x - 30, y - 3, x + 30, y + 30);
+
+
+        }
+
+        let myInt = setInterval(veHinhChuNhat, 1000);
+
+        function stopDraw() {
+            clearInterval(myInt);
+        }
+    </script>
+</body>
+
+</html>

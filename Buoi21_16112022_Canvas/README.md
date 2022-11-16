@@ -35,5 +35,14 @@ ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise)
 * endAngle: góc bắt đầu (đơn vị radian, theo số Math.PI)
 
 ## Vẽ hình nhật
+```
 ctx.fillStyle = "color";
 ctx.fillRect(10, 10, 150, 80);
+```
+
+* Đổ màu gradient: LinearGradient
+```
+ctx.createLinearGradient(x0,y0,x1,y1);
+```
+- (x0, y0): The coordinate of the start point of the gradient
+- (x1, y1): The coordinate of the end point of the gradient
