@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Định nghĩa lớp xe hơi gồm nhà sản xuất (brandname), model, năm
+        class Car {
+            //Contructor
+            constructor(name = "Huyndai", model = "Tuscon", year = 2023) {
+                this.brandName = name;
+                this.model = model;
+                this.year = year;
+            }
+
+            //method
+            toString() {
+                return `${this.brandName} car, model ${this.model} ${this.year}`;
+            }
+        }
+
+        //object
+        let bmw = new Car("BMW", "I20", 2020);
+        let kia = new Car("Kia", "K5", 2022);
+        let nocar = new Car();
+        let hd = new Car("Toyota");
+        console.log(nocar.toString());
+        console.log(hd.toString());
+        console.log(bmw.toString());
+        console.log(kia.toString());
+    </script>
+</body>
+
+</html>
