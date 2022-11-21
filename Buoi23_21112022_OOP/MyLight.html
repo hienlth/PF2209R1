@@ -6,21 +6,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My light</title>
+    <script>
+        class Battery {
+            constructor() {
+                this.energy = 0;
+            }
+
+            setEnergy(energy) {
+                this.energy = energy;
+            };
+
+            getEnergy() {
+                return this.energy;
+            };
+
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy--;
+                }
+            }
+
+            increaseEnergy(eNum) {
+                this.energy += eNum;
+            }
+        }
+
+        class LightLamp {
+            constructor() {
+                this.status = false;
+            }
+
+            setBattery(battery) {
+                this.battery = battery;
+            };
+
+            getBatteryInfo() {
+                return this.battery.getEnergy();
+            };
+
+            light() {
+                if (this.status) {
+                    alert("Lighting");
+                } else {
+                    alert("Not lighting");
+                }
+            };
+
+            turnOn() {
+                this.status = true;
+            };
+
+            turnOff() {
+                this.status = false;
+            }
+        }
+
+        //khai báo đèn pin
+        let myBattery = new Battery();
+        let myLamp = new LightLamp();
+        myLamp.setBattery(myBattery);
+        console.log(myLamp.getBatteryInfo(), myLamp.status)
+    </script>
 </head>
 
 <body>
     <div>
         Cần nạp: <input id="mucPinNap" type="number" min="1" />
-        <button type="button">Nạp pin</button>
+        <button type="button" onclick="handleBattery()">Nạp pin</button>
     </div>
     <fieldset>
         <div>
-            <button type="button" id="turnOnLight">ON</button>
-            <button type="button" id="turnOffLight">OFF</button>
+            <button type="button" onclick="handleOn()">ON</button>
+            <button type="button" onclick="handleOff()">OFF</button>
         </div>
-        <div>Status: <span id="lightStatus"></span></div>
+        <div>
+            Status:
+            <span id="lightStatus"></span>
+        </div>
         <div>Battery: <span id="batteryEnergy"></span></div>
     </fieldset>
+    <script>
+        function showStatus() {
+            document.getElementById("lightStatus").innerHTML = myLamp.status;
+        }
+        function showBattery() {
+            document.getElementById("batteryEnergy").innerHTML = myLamp.getBatteryInfo();
+        }
+        let myInterval;
+        function decreaseLight() {
+            myLamp.battery.decreaseEnergy();
+            showStatus();
+            showBattery();
+            if (myLamp.battery.getEnergy() == 0) {
+                clearInterval(myInterval);
+            }
+        }
+        function handleOn() {
+            myLamp.turnOn();
+            myInterval = setInterval(decreaseLight, 500);
+        }
+        function handleOff() {
+            myLamp.turnOff();
+            if (myInterval) {
+                clearInterval(myInterval);
+            }
+            showStatus();
+        }
+
+        function handleBattery() {
+            myLamp.battery.increaseEnergy(document.getElementById("mucPinNap").value);
+            showBattery();
+        }
+
+        showStatus();
+        showBattery();
+    </script>
 </body>
 
 </html>
