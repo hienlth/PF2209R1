@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Dài: <input id="chieuDai" type="number" min="1" /><br>
+        Rộng: <input id="chieuRong" type="number" min="1" /><br>
+        Màu: <input id="mau"><br>
+        <button type="button">Vẽ hình</button>
+        <button type="button">Tính</button>
+        <div id="ketQua"></div>
+        <canvas id="myCanvas" width="800" height="600" style="border: 1px solid blue;"></canvas>
+    </div>
+    <script>
+        class HinhChuNhat {
+            constructor(w, h, color) {
+                this.width = w;
+                this.height = h;
+                this.fillColor = color;
+            }
+
+            calculateArea() {
+                return this.width * this.height;
+            }
+
+            calculatePerimeter() {
+                return (this.width + this.height) * 2;
+            }
+
+            draw() {
+                let c = document.getElementById("myCanvas");
+                let ctx = c.getContext("2d");
+                ctx.fillStyle = this.fillColor;
+                ctx.fillRect(10, 10, this.width, this.height);
+            }
+
+            setWidth(w) {
+                this.width = w;
+            }
+
+            getWidth() {
+                return this.width;
+            }
+
+            setHeight(h) {
+                this.height = h;
+            }
+
+            getHeight() {
+                return this.height;
+            }
+        }
+
+        //demo
+        let hcn = new HinhChuNhat(20, 30, "red");
+        console.log(hcn.height);
+        //hcn.width = 50;
+        hcn.setWidth(50);
+        console.log(hcn.width);
+    </script>
+</body>
+
+</html>
