@@ -12,15 +12,17 @@
     <div>
         <fieldset>
             <legend>Hình chữ nhật thứ 1</legend>
-            Tọa độ điểm: X = <input id="x1" /> Y = <input id="y1" /><br>
-            Chiều rộng: W = <input id="w1" />
-            Chiều cao: H = <input id="h1" />
+            Tọa độ điểm: X = <input id="x1" type="number" value="20" />
+            Y = <input id="y1" type="number" value="20" /><br>
+            Chiều rộng: W = <input id="w1" type="number" value="200" />
+            Chiều cao: H = <input id="h1" type="number" value="200" />
         </fieldset>
         <fieldset>
             <legend>Hình chữ nhật thứ 2</legend>
-            Tọa độ điểm: X = <input id="x2" /> Y = <input id="y2" /><br>
-            Chiều rộng: W = <input id="w2" />
-            Chiều cao: H = <input id="h2" />
+            Tọa độ điểm: X = <input id="x2" type="number" value="220" />
+            Y = <input id="y2" type="number" value="100" /><br>
+            Chiều rộng: W = <input id="w2" type="number" value="100" />
+            Chiều cao: H = <input id="h2" type="number" value="300" />
         </fieldset>
         <button type="button" onclick="kiemTra()">Kiểm tra</button>
     </div>
@@ -37,17 +39,18 @@
 
             // xác định va chạm giữa 2 hình chữ nhật (đối tượng Rect)
             isCollision(rect2) {
-                let distX = Math.abs((this.x + this.w / 2) - (rect2.x + rect2.w / 2));
+                let distX = Math.abs(this.x + this.w / 2 - (rect2.x + rect2.w / 2));
                 const distW = (this.w + rect2.w) / 2;
 
-                let distY = Math.abs(this.y + this.h / 2 - rect2.y + rect2.h);
+                let distY = Math.abs(this.y + this.h / 2 - (rect2.y + rect2.h / 2));
                 const distH = (this.h + rect2.h) / 2;
 
                 return (distX <= distW && distY <= distH);
             }
 
-            draw(ctx) {
+            draw(ctx, color) {
                 ctx.lineWidth = 4;
+                ctx.strokeStyle = color;
                 ctx.strokeRect(this.x, this.y, this.w, this.h);
                 ctx.stroke();
             }
@@ -58,12 +61,30 @@
 
         function kiemTra() {
             //1. clear canvas
+            ctx.clearRect(0, 0, 800, 600);
 
             //2. Đọc thông số từ màn hình của hcn1, hcn2
+            let x1 = parseInt(document.getElementById("x1").value);
+            let y1 = parseInt(document.getElementById("y1").value);
+            let w1 = parseInt(document.getElementById("w1").value);
+            let h1 = parseInt(document.getElementById("h1").value);
+            let hcn1 = new Rect(x1, y1, w1, h1);
+            let x2 = parseInt(document.getElementById("x2").value);
+            let y2 = parseInt(document.getElementById("y2").value);
+            let w2 = parseInt(document.getElementById("w2").value);
+            let h2 = parseInt(document.getElementById("h2").value);
+            let hcn2 = new Rect(x2, y2, w2, h2);
 
             //3. Vẽ
+            hcn1.draw(ctx, "yellow");
+            hcn2.draw(ctx, "green");
 
             //4. Kết luận có va chạm hay không?
+            if (hcn1.isCollision(hcn2)) {
+                document.getElementById("result").innerHTML = "Hai hình chữ nhật có va chạm";
+            } else {
+                document.getElementById("result").innerHTML = "Hai hình chữ nhật không va chạm";
+            }
         }
     </script>
 </body>
