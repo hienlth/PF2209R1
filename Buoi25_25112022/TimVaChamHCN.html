@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>Hình chữ nhật thứ 1</legend>
+            Tọa độ điểm: X = <input id="x1" /> Y = <input id="y1" /><br>
+            Chiều rộng: W = <input id="w1" />
+            Chiều cao: H = <input id="h1" />
+        </fieldset>
+        <fieldset>
+            <legend>Hình chữ nhật thứ 2</legend>
+            Tọa độ điểm: X = <input id="x2" /> Y = <input id="y2" /><br>
+            Chiều rộng: W = <input id="w2" />
+            Chiều cao: H = <input id="h2" />
+        </fieldset>
+        <button type="button" onclick="kiemTra()">Kiểm tra</button>
+    </div>
+    <div id="result"></div>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+    <script>
+        class Rect {
+            constructor(x, y, width, height) {
+                this.x = x;
+                this.y = y;
+                this.w = width;
+                this.h = height;
+            }
+
+            // xác định va chạm giữa 2 hình chữ nhật (đối tượng Rect)
+            isCollision(rect2) {
+                let distX = Math.abs((this.x + this.w / 2) - (rect2.x + rect2.w / 2));
+                const distW = (this.w + rect2.w) / 2;
+
+                let distY = Math.abs(this.y + this.h / 2 - rect2.y + rect2.h);
+                const distH = (this.h + rect2.h) / 2;
+
+                return (distX <= distW && distY <= distH);
+            }
+
+            draw(ctx) {
+                ctx.lineWidth = 4;
+                ctx.strokeRect(this.x, this.y, this.w, this.h);
+                ctx.stroke();
+            }
+        }
+
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+
+        function kiemTra() {
+            //1. clear canvas
+
+            //2. Đọc thông số từ màn hình của hcn1, hcn2
+
+            //3. Vẽ
+
+            //4. Kết luận có va chạm hay không?
+        }
+    </script>
+</body>
+
+</html>
