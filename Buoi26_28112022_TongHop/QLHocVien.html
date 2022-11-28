@@ -40,14 +40,14 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="button">Thêm mới</button>
+                    <button type="button" onclick="themMoiHocVien()">Thêm mới</button>
                 </td>
             </tr>
         </table>
     </fieldset>
     <fieldset>
         <legend>Danh sách học viên</legend>
-        <button type="button">Lấy danh sách</button>
+        <button type="button" onclick="hienThiDanhSachHocVien()">Lấy danh sách</button>
         <table border="1" cellpadding="5" cellspacing="0">
             <thead>
                 <tr>
@@ -61,6 +61,46 @@
             <tbody></tbody>
         </table>
     </fieldset>
+    <script>
+        const DS_HOC_VIEN_KEY = "dsHocVien";
+        function docThongTinHocVienTuLocalStorage() {
+            try {
+                let dsHocVien = localStorage.getItem(DS_HOC_VIEN_KEY);
+                if (dsHocVien === null) {
+                    return [];
+                } else {
+                    return JSON.parse(dsHocVien);
+                }
+            } catch (e) {
+                console.log(e)
+                return [];
+            }
+        }
+        function themMoiHocVien() {
+            // tạo đối tượng học viên
+            let hocVien = {
+                hoTen: document.getElementById("hoTen").value,
+                soDienThoai: document.getElementById("soDienThoai").value,
+                nam: document.getElementById("gtNam").checked,
+                diem: parseFloat(document.getElementById("diem").value)
+            };
+            console.log(hocVien);
+
+            //lấy danh sách học viên từ localStorage
+            let dsHocVien = docThongTinHocVienTuLocalStorage();
+            // tìm dựa vào số điện thoại xem học viên đã có trong danh sách hay chưa
+            // thêm vào mảng các học viên
+            dsHocVien.push(hocVien);
+
+            // ghi mảng học viên vào localStorage
+            localStorage.setItem(DS_HOC_VIEN_KEY, JSON.stringify(dsHocVien));
+        }
+
+        function hienThiDanhSachHocVien() {
+            //lấy danh sách học viên từ localStorage
+            let dsHocVien = docThongTinHocVienTuLocalStorage();
+        }
+    </script>
 </body>
 
 </html>
