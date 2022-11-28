@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý học viên</title>
+</head>
+
+<body>
+    <h2>Quản lý Học viên</h2>
+    <fieldset>
+        <legend>Thêm học viên</legend>
+        <table>
+            <tr>
+                <td>Họ tên</td>
+                <td>
+                    <input id="hoTen" />
+                </td>
+            </tr>
+            <tr>
+                <td>Số điện thoại</td>
+                <td>
+                    <input id="soDienThoai" />
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <input type="radio" name="gioiTinh" value="1" checked id="gtNu">Nữ
+                    <input type="radio" name="gioiTinh" value="0" id="gtNam">Nam
+                </td>
+            </tr>
+            <tr>
+                <td>Điểm</td>
+                <td>
+                    <input type="number" min="0" max="10" id="diem" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="button">Thêm mới</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Danh sách học viên</legend>
+        <button type="button">Lấy danh sách</button>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Giới tính</th>
+                    <th>Điểm</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </fieldset>
+</body>
+
+</html>
