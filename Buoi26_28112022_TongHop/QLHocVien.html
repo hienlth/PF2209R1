@@ -10,6 +10,7 @@
 
 <body>
     <h2>Quản lý Học viên</h2>
+    <button type="button" onclick="hienPopUp()">Thêm mới</button>
     <fieldset>
         <legend>Thêm học viên</legend>
         <table>
@@ -40,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="button" onclick="themMoiHocVien()">Thêm mới</button>
+                    <button type="button" onclick="themMoiHocVien()">Lưu thêm mới</button>
                 </td>
             </tr>
         </table>
@@ -58,11 +59,18 @@
                     <th>Điểm</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody id="ketQua"></tbody>
         </table>
     </fieldset>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         const DS_HOC_VIEN_KEY = "dsHocVien";
+
+        function hienPopUp() {
+            Swal.fire("Mỡ popUP");
+        }
+
         function docThongTinHocVienTuLocalStorage() {
             try {
                 let dsHocVien = localStorage.getItem(DS_HOC_VIEN_KEY);
