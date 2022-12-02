@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="ketQua"></div>
+    <script>
+        class BanTin {
+            constructor(tieuDe, noiDung, tacGia, ngayDang) {
+                this.tacGia = tacGia;
+                this.ngayDang = ngayDang;
+                this.tieuDe = tieuDe;
+                this.noiDung = noiDung;
+            }
+
+            xuat() {
+                return `
+                <div>
+                    <h2>${this.tieuDe}</h2>
+                    <h5><i>${this.ngayDang.toLocaleDateString()}</i></h5>
+                    <div>${this.noiDung}</div>
+                </div>
+                `;
+            }
+        }
+
+        function sapTheoNgayDang(arr) {
+            sortedData = arr.sort(function (a, b) {
+                let x = a.ngayDang;
+                let y = b.ngayDang;
+                if (x > y) { return 1; }
+                if (x < y) { return -1; }
+                return 0;
+            });
+            return sortedData;
+        }
+
+        let dsBangTin = [
+            new BanTin('WC2022', 'Pháp thắng Tunisia 2-0', 'admin', Date.now()),
+            new BanTin('WC2026', 'Pháp thắng Tunisia 5-0', 'admin', Date.now()),
+        ];
+
+        // duyệt và in
+        for (let idx in dsBangTin) {
+            console.log(dsBangTin[idx]);
+            console.log(dsBangTin[idx].xuat());
+            document.getElementById("ketQua").innerHTML += dsBangTin[idx].xuat();
+        }
+    </script>
+</body>
+
+</html>
